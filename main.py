@@ -8,23 +8,18 @@ from cfr import CFRPlus
 from mcts import MCTS
 
 
-# ─────────────────────────────────────────────
-# CONFIG
-# ─────────────────────────────────────────────
-MAX_ITERATIONS = 50000
+MAX_ITERATIONS = 10000
 STEP = 500
 
-GAMES_PER_STEP = 1000     # 🔥 verhoogd (was 200)
-NUM_RUNS = 3              # 🔥 nieuw (voor averaging)
+GAMES_PER_STEP = 1000     )
+NUM_RUNS = 3              
 
-MCTS_ITERATIONS = 1000    # 🔥 FIX: constant houden!
+MCTS_ITERATIONS = 1000  
 
 card_combinations = ["12", "13", "21", "23", "31", "32"]
 
 
-# ─────────────────────────────────────────────
-# HELPER FUNCTIES
-# ─────────────────────────────────────────────
+
 def sample_action(strategy):
     r = random.random()
     cumulative = 0
@@ -59,9 +54,7 @@ def play_game(root, cfr, mcts):
     return state.evaluation(), cfr_time, mcts_time
 
 
-# ─────────────────────────────────────────────
-# EXPERIMENT
-# ─────────────────────────────────────────────
+
 def run_experiment():
     results = []
 
@@ -130,9 +123,7 @@ def run_experiment():
     return df
 
 
-# ─────────────────────────────────────────────
-# GRAFIEKEN
-# ─────────────────────────────────────────────
+
 def make_plots(df):
 
     # 🔥 betere smoothing
@@ -185,9 +176,7 @@ def make_plots(df):
     print("Grafieken opgeslagen.")
 
 
-# ─────────────────────────────────────────────
-# MAIN
-# ─────────────────────────────────────────────
+
 if __name__ == "__main__":
     print("Start experiment...\n")
 
